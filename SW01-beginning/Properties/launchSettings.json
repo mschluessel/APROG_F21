@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SW01-beginning": {
+      "commandName": "Project",
+      "commandLineArgs": "Arg0 Arg1 Arg2 Arg3"
+    }
+  }
+}
