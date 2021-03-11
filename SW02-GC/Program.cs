@@ -1,13 +1,17 @@
 ﻿using System;
 
-namespace SW02_GC {
-    class Program {
+namespace SW02_GC
+{
+    class Program
+    {
 
-        static void GC_test() {
-            Console.WriteLine($"Used memory: {GC.GetTotalMemory(false)/1024} KBytes");
+        static void GC_test()
+        {
+            Console.WriteLine($"Used memory: {GC.GetTotalMemory(false) / 1024} KBytes");
         }
 
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
 
             GC_test();
 
@@ -15,7 +19,8 @@ namespace SW02_GC {
 
             GC_test();
 
-            for(int i = 0; i < jaggedArray.Length; i++) {
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
                 jaggedArray[i] = new int[1024 * 1024];
                 GC_test();
             }
