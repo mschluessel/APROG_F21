@@ -17,23 +17,34 @@ namespace SW04_MyList {
         public int Count { get; set; }
         #endregion
 
+        private Type type  = new object().GetType();
+
+
         #region Constructor
         public MyList(int Max_objects) {
             data = new object[Max_objects];
             index = 0;
         }
+
+        public MyList(int Max_objects, Type type) {
+            data = new object[Max_objects];
+            index = 0;
+            this.type = type;
+        }
         #endregion
 
-        public void Add(object elem) {
+        public bool Add(object elem) {
+            if (type != new object().GetType() && elem.GetType() != type) {
+                return false;
+            }
             if (index >= data.Length) {
                 Console.WriteLine("List is full!");
                 object[] newList = new object[Capacity + Capacity];
-                Array.Copy(newList, data, data.Length);
+                Array.Copy(data, newList, data.Length);
                 data = newList;
-                return;
             }
             data[index++] = elem;
-            return;
+            return true;
         }
 
         public object Get(int idx) {
