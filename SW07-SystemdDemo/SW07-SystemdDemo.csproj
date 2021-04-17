@@ -1,17 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>SW06_DebugDemo</RootNamespace>
+    <RootNamespace>SW07_SystemdDemo</RootNamespace>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="&#xD;&#xA;cd &quot;$(TargetDir)&quot;&#xD;&#xA;&quot;$(SolutionDir)\SecureUpload.exe&quot; . pi-hslu:netcore/$(ProjectName)" />
   </Target>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Utils\Utils.csproj" />
-  </ItemGroup>
 
 </Project>
