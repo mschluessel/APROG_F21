@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>SW11_ChatClientV2</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ChatClientLib">
+      <HintPath>..\SW11-ChatClient\libs\ChatClientLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

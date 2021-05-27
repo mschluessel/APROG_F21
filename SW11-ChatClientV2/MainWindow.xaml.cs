@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,12 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ChatClientLib;
+using System.Threading;
 
-namespace SW11_ChatClient {
+namespace SW11_ChatClientV2 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+
 
         private IChatClient client;
 
@@ -54,21 +55,20 @@ namespace SW11_ChatClient {
                 ListBoxChatUsers.Items.Clear();
                 foreach (string user in newUser) {
                     ListBoxChatUsers.Items.Add(user);
-                    }
+                }
                 //ListBoxChatUsers.Items.Refresh();
-                if(o != null) ListBoxChatUsers.SelectedItem = o;
+                if (o != null) ListBoxChatUsers.SelectedItem = o;
             });
         }
 
         private void Client_MessageReceived(object sender, MessageReceivedEventArgs e) {
             string msg = e.Message;
             //listReceivedMessages.Add(msg);
-            this.Dispatcher.Invoke(() =>
-            {
+            this.Dispatcher.Invoke(() => {
                 ListBoxReceivedMessages.Items.Add(msg);
                 //ListBoxReceivedMessages.Items.Refresh();
             });
-            
+
         }
 
         private void ButtonSendMessage(object sender, RoutedEventArgs e) {
@@ -78,11 +78,18 @@ namespace SW11_ChatClient {
         }
 
         private void ListBoxChatUsers_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            
+
         }
 
-        private void WindowClose(object sender, System.ComponentModel.CancelEventArgs e) {
-            //client.Disconnect();
+        private void MessageBoxKeyDown(object sender, KeyEventArgs e) {
+            if (e == Key.Enter()) {
+
+            }
         }
+
+        //private void WindowClose(object sender, System.ComponentModel.CancelEventArgs e) {
+        //    client.Disconnect();
+        //}
+
     }
 }

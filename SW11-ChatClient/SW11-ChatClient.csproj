@@ -1,10 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>SW11_ChatClient</RootNamespace>
-    <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
